@@ -1,0 +1,13 @@
+.navigation.col-lg-12 {
+  margin-top: 0.8em;
+}
+
+.jumbotron {
+  padding: 1.5em;
+  border-radius: 0.5em;
+  box-shadow: 0.1em 0.2em 0.2em  lightgrey;
+}
+
+.navbar-nav .active {
+  border-bottom: orange solid 0.2em;
+}
