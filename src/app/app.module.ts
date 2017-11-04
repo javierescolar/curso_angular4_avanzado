@@ -3,8 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { routing, appRoutingProviders } from './app.routing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 //importar nuestro nuevo modulos
 import {ModuloEmailModule} from './moduloemail/modulo-email.module';
+import {AdminModule} from './admin/admin.module';
 
 //Componentes
 import { AppComponent } from './app.component';
@@ -33,7 +36,9 @@ import { KeepersComponent } from './components/keepers/keepers.component';
     FormsModule,
     HttpModule,
     routing,
-    ModuloEmailModule
+    ModuloEmailModule,
+    AdminModule,
+    BrowserAnimationsModule
   ],
   providers: [
     appRoutingProviders

@@ -11,3 +11,97 @@
 .navbar-nav .active {
   border-bottom: orange solid 0.2em;
 }
+
+.navbar-nav>li>a:hover {
+  transition: all 200ms;
+  border-bottom: orange solid 0.2em;
+}
+
+.container-personal{
+  margin: 1.5em;
+}
+
+
+.boton_transiciones {
+  display: block;
+  width: 8em;
+  padding: 10px;
+  background: red;
+  color: white;
+  border-radius: 20px;
+  border: 2px solid blue;
+  transition: border 2s, border-radius 500ms, background 5s;
+}
+
+.boton_transiciones:hover{
+  text-decoration: none;
+  color:white;
+  cursor: pointer;
+  border-radius: 2px;
+  background: #ccc;
+  border: solid 1px red;
+}
+
+.caja_animada {
+  margin-top: 2em;
+  background: green;
+  border: solid black 5px;
+  width: 200px;
+  height: 200px;
+  /*
+  animation-name: rotacion;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  */
+}
+
+@keyframes deslizamiento1 {
+  from {
+    margin-left: 0px;
+  }
+
+  to {
+    margin-left: 400px;
+    background: red;
+  }
+}
+
+@keyframes rotacion {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+    margin-left: 400px;
+    border-radius: 100px
+  }
+}
+
+
+@keyframes deslizamiento2 {
+  0% {
+    margin-left: 0px;
+  }
+
+  25% {
+    margin-left: 400px;
+    background: red;
+    border-radius: 100px
+  }
+
+  50% {
+    margin-left: 400px;
+    background: red;
+  }
+
+  75% {
+    margin-left: 400px;
+    background: red;
+  }
+
+  100%{
+    margin-left: 0px;
+    background: green;
+  }
+}
