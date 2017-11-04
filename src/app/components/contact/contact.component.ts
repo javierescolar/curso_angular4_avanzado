@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './contact.component.html'
 })
 export class ContactComponent implements OnInit {
-  title = 'contact';
+  title = 'Contacto';
   emailContacto: string;
   ngOnInit(){
     console.log('contact component cargado');

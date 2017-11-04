@@ -1,7 +1,17 @@
 <h4>Utilizar jquery dentro de angular</h4>
 <button id="botonjq">Mostrar texto</button>
-
 <p id="textojq" class="alert alert-warning">Esto es un texto de prueba</p>
+<div style="width:150px;height:100px; border:solid 0.1em; black;" id="caja">
+  jsdbhkajdbas dahdbhasdbashj dsa dhajsdjasdajhsd hsajd ahsdhjsadh
+  jabhdjashjdv sajh jhasdvhsavdjhavda had has dhjas djhas djbad
+  bakdsjbasjdbasj asdhas dhjas dhsadas dhad jhashdadshd a
+</div>
+<simple-tiny
+  [elementId]="'descripcionTienda'"
+  (onEditorKeyup)="textoRichEditor($event)"
+  >
+</simple-tiny>
+
 <hr>
 Padre:
 <h1>{{titulo}}</h1>

@@ -10,12 +10,6 @@
         <li><a [routerLinkActive]="['active']" [routerLink]="['/cuidadores']"><span class="glyphicon glyphicon-user"></span> Cuidadores</a></li>
         <li><a [routerLinkActive]="['active']" [routerLink]="['/tienda']"><span class="glyphicon glyphicon-gift"></span> Tienda</a></li>
         <li><a [routerLinkActive]="['active']" [routerLink]="['/contacto']"><span class="glyphicon glyphicon-comment"></span> Contacto</a></li>
-        <li class="hidden">
-          <span *ngIf="emailContacto">
-            <b>Email de Contacto:</b> {{emailContacto}}
-            <button (click)="borrarEmail()">Eliminar email de cotacto</button>
-          </span>
-        </li>
       </ul>
 
     </div>
