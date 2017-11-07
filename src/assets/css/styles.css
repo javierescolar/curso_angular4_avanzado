@@ -9,7 +9,11 @@
 }
 
 .navbar-nav .active {
-  border-bottom: orange solid 0.2em;
+  border-bottom: orange solid 0.2em !important;
+}
+
+.navbar-nav>li>a {
+  border-bottom:solid transparent 0.2em;
 }
 
 .navbar-nav>li>a:hover {

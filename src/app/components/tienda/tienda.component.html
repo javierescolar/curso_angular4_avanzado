@@ -1,60 +1,64 @@
-<a class="boton_activo btn btn-success"
-  [@marcar]="status" (click)="cambiarEstado()">
-  <span *ngIf="status == 'active'">Activado</span>
-  <span *ngIf="status != 'active'">Desactivado</span>
-</a>
+<div class="col-lg-12" [@fadeIn]>
 
-<hr>
-<h4>Animaciones CCS3</h4>
-<a class="boton_transiciones">Transiciones</a>
-<div class="caja_animada"></div>
-<hr>
-<h4>Utilizar jquery dentro de angular</h4>
-<button id="botonjq">Mostrar texto</button>
-<p id="textojq" class="alert alert-warning">Esto es un texto de prueba</p>
-<div style="width:150px;height:100px; border:solid 0.1em; black;" id="caja">
-  jsdbhkajdbas dahdbhasdbashj dsa dhajsdjasdajhsd hsajd ahsdhjsadh
-  jabhdjashjdv sajh jhasdvhsavdjhavda had has dhjas djhas djbad
-  bakdsjbasjdbasj asdhas dhjas dhsadas dhad jhashdadshd a
+
+  <a class="boton_activo btn btn-success"
+    [@marcar]="status" (click)="cambiarEstado()">
+    <span *ngIf="status == 'active'">Activado</span>
+    <span *ngIf="status != 'active'">Desactivado</span>
+  </a>
+
+  <hr>
+  <h4>Animaciones CCS3</h4>
+  <a class="boton_transiciones">Transiciones</a>
+  <div class="caja_animada"></div>
+  <hr>
+  <h4>Utilizar jquery dentro de angular</h4>
+  <button id="botonjq">Mostrar texto</button>
+  <p id="textojq" class="alert alert-warning">Esto es un texto de prueba</p>
+  <div style="width:150px;height:100px; border:solid 0.1em; black;" id="caja">
+    jsdbhkajdbas dahdbhasdbashj dsa dhajsdjasdajhsd hsajd ahsdhjsadh
+    jabhdjashjdv sajh jhasdvhsavdjhavda had has dhjas djhas djbad
+    bakdsjbasjdbasj asdhas dhjas dhsadas dhad jhashdadshd a
+  </div>
+  <simple-tiny
+    [elementId]="'descripcionTienda'"
+    (onEditorKeyup)="textoRichEditor($event)"
+    >
+  </simple-tiny>
+
+  <hr>
+  Padre:
+  <h1>{{titulo}}</h1>
+  <ul>
+    <li>Camiseta rosa</li>
+    <li>Gorra negra</li>
+  </ul>
+
+  <hr>
+  <p>
+    Nombre del parque:
+    <input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()" />
+  </p>
+  <p>
+    Resultado: {{nombreDelParque}}
+  </p>
+
+  <div *ngIf="miParque">
+    <h4>Datos de mi Parque desde el hijo</h4>
+    <ol >
+      <li>{{miParque.nombre}}</li>
+      <li>{{miParque.metros}}</li>
+      <li>{{miParque.vegetacion}}</li>
+      <li>{{miParque.abierto}}</li>
+    </ol>
+  </div>
+
+  <hr>
+  <p *ngIf="nombreDelParque">
+    Hijo:
+    <parques [nombre]="nombreDelParque"
+             [metros_cuadrados]='965'
+             (pasameLosDatos)="verDatosParque($event)"
+             ></parques>
+  </p>
 </div>
-<simple-tiny
-  [elementId]="'descripcionTienda'"
-  (onEditorKeyup)="textoRichEditor($event)"
-  >
-</simple-tiny>
-
-<hr>
-Padre:
-<h1>{{titulo}}</h1>
-<ul>
-  <li>Camiseta rosa</li>
-  <li>Gorra negra</li>
-</ul>
-
-<hr>
-<p>
-  Nombre del parque:
-  <input type="text" [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()" />
-</p>
-<p>
-  Resultado: {{nombreDelParque}}
-</p>
-
-<div *ngIf="miParque">
-  <h4>Datos de mi Parque desde el hijo</h4>
-  <ol >
-    <li>{{miParque.nombre}}</li>
-    <li>{{miParque.metros}}</li>
-    <li>{{miParque.vegetacion}}</li>
-    <li>{{miParque.abierto}}</li>
-  </ol>
-</div>
-
-<hr>
-<p *ngIf="nombreDelParque">
-  Hijo:
-  <parques [nombre]="nombreDelParque"
-           [metros_cuadrados]='965'
-           (pasameLosDatos)="verDatosParque($event)"
-           ></parques>
-</p>

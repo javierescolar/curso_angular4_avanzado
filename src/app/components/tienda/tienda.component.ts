@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {trigger, state,style, transition, animate} from '@angular/core';
-
+import { fadeIn } from '../animation';
 @Component({
   selector:'tienda',
   templateUrl:'./tienda.component.html',
@@ -18,7 +18,8 @@ import {trigger, state,style, transition, animate} from '@angular/core';
       })),
       transition('inactive => active', animate('3s linear')),
       transition('active => inactive', animate('3s linear')),
-    ])
+    ]),
+    fadeIn
   ]
 })
 export class TiendaComponent implements OnInit {
