@@ -2,6 +2,21 @@
   margin-top: 0.8em;
 }
 
+.image-for-edit{
+  width: 15em;
+}
+
+.image-for-navbar{
+  width: 5em;
+  border-radius:2em;
+  margin-top: 0.35em;
+  overflow: hidden;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
 .jumbotron {
   padding: 1.5em;
   border-radius: 0.5em;

@@ -1,0 +1,47 @@
+<div class="col-lg-6 col-md-offset-3">
+  <h2>{{title}}</h2>
+
+  <div class="alert alert-success" *ngIf="status== 'success'">
+    Cambiado datos correctamente
+  </div>
+
+  <div class="alert alert-danger" *ngIf="status == 'error'">
+    Error al cambiado datos
+  </div>
+
+  <form #userEditForm="ngForm" (ngSubmit)="onSubmit()">
+    <p>
+      <label for="">Nombre</label>
+      <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" required>
+      <span *ngIf="!name.valid && name.touched" class="alert alert-danger">
+        El nombre es obligatorio
+      </span>
+    </p>
+
+    <p>
+      <label for="">Apellidos</label>
+      <input type="text" name="surname" #surname="ngModel" [(ngModel)]="user.surname" class="form-control" required>
+      <span *ngIf="!surname.valid && surname.touched" class="alert alert-danger">
+        Los apellidos es obligatorio
+      </span>
+    </p>
+
+    <p>
+      <label for="">Correo Electrónico</label>
+      <input type="email" name="email" #email="ngModel" [(ngModel)]="user.email" class="form-control" required>
+      <span *ngIf="!email.valid && email.touched" class="alert alert-danger">
+        El email es obligatorio
+      </span>
+    </p>
+
+    <div class="image-for-edit img img-responsive" *ngIf="user.image && user.image != 'null'">
+      <img src="{{url + '/get-image-file/' +user.image}}">
+    </div>
+
+    <p>
+      <label for="">Sube tu avatar</label>
+      <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)">
+    </p>
+    <input type="submit" class="btn btn-primary" value="Cambiar" [disabled]="!userEditForm.form.valid">
+  </form>
+</div>

@@ -11,9 +11,25 @@
         <li><a [routerLinkActive]="['active']" [routerLink]="['/tienda']"><span class="glyphicon glyphicon-gift"></span> Tienda</a></li>
         <li><a [routerLinkActive]="['active']" [routerLink]="['/contacto']"><span class="glyphicon glyphicon-comment"></span> Contacto</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" *ngIf="!identity">
         <li><a [routerLinkActive]="['active']" [routerLink]="['/registro']"><span class="glyphicon glyphicon-user"></span> Registro</a></li>
         <li><a [routerLinkActive]="['active']" [routerLink]="['/login']"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" *ngIf="identity">
+        <li *ngIf="identity.image && identity.image != 'null'">
+          <img src="{{url + '/get-image-file/' +identity.image}}" class="image-for-navbar img img-responsive">
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">
+            {{identity.name}}<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a [routerLink]="['/mis-datos']"><span class="glyphicon glyphicon-cog"></span> Mis datos</a></li>
+            <li><a class="pointer" (click)="logout()"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          </ul>
+        </li>
+
       </ul>
     </div>
   </nav>
