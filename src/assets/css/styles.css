@@ -7,8 +7,9 @@
 }
 
 .image-for-navbar{
-  width: 5em;
-  border-radius:2em;
+  width: 3em;
+  height: 3em;
+  border-radius:5em;
   margin-top: 0.35em;
   overflow: hidden;
 }

@@ -1,0 +1,11 @@
+<div class="animal-box col-lg-10" *ngIf="animal">
+  <div id="anima-head-card" class="col-lg-4 pull-left">
+    <img style="width:300px;" src="{{url + '/get-image-animal/' +animal.image}}" alt="">
+  </div>
+  <div class="animal-data col-lg-8 pull-left">
+    <h2>{{animal.name}}</h2>
+    <h2>{{animal.user.name + ' ' + animal.user.surname}}</h2>
+    <h2>{{animal.year}}</h2>
+    <p>{{animal.description}}</p>
+  </div>
+</div>

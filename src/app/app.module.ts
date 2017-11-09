@@ -9,6 +9,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ModuloEmailModule} from './moduloemail/modulo-email.module';
 import {AdminModule} from './admin/admin.module';
 
+//guards y servicios
+import {AdminGuard} from './guards/admin.guards';
+import {UserService} from './services/user.service';
+
 //Componentes
 import { AppComponent } from './app.component';
 import { SimpleTinyComponent } from './components/simple-tiny/simple-tiny.component';
@@ -22,6 +26,7 @@ import { KeepersComponent } from './components/keepers/keepers.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user_edit/user_edit.component';
+import { AnimalDetailComponent } from './components/animal_detail/animal_detail.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,8 @@ import { UserEditComponent } from './components/user_edit/user_edit.component';
     KeepersComponent,
     RegisterComponent,
     LoginComponent,
-    UserEditComponent
+    UserEditComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,9 @@ import { UserEditComponent } from './components/user_edit/user_edit.component';
     BrowserAnimationsModule
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    UserService,
+    AdminGuard
   ],
   bootstrap: [AppComponent]
 })

@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
         if(!this.identity || !this.identity._id){
           alert("El usuario no se ha registrado correctamente");
         } else {
-          delete this.identity.password;
+          
           localStorage.setItem('identity',JSON.stringify(this.identity));
           //segunda peticio para conseguir el  token
           this._userService.singUp(this.user,'true').subscribe(

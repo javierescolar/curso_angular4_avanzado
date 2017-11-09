@@ -8,6 +8,8 @@ import {MainComponent} from './components/main/main.component';
 import {ListComponent} from './components/list/list.component';
 import {EditComponent} from './components/edit/edit.component';
 import {AddComponent} from './components/add/add.component';
+//guards
+import {AdminGuard} from '../guards/admin.guards';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,7 @@ import {AddComponent} from './components/add/add.component';
     AdminRoutingModule
   ],
   exports: [],
-  providers: []
+  providers: [AdminGuard]
 })
 
 export class AdminModule {}
