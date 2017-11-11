@@ -1,4 +1,4 @@
-<div class="col-lg-10">
+<div class="col-lg-10" [@fadeLateral]>
   <div class="alert alert-success" *ngIf="status == 'success'">
     Registro completado correctamente
   </div>
@@ -29,10 +29,17 @@
         El Año es obligatorio
       </span>
     </p>
+
+    <div *ngIf="is_edit && animal.image" class="">
+      <div class="animal_image">
+        <img class="image-for-edit" src="{{url + '/get-image-animal/' + animal.image }}" alt="">
+      </div>
+    </div>
+
     <p>
       <label for="">Subir Imagen</label>
       <input type="file" placeholder="Subir Imagen ..." (change)="fileChangeEvent($event)">
     </p>
-    <input type="submit" value="Crear nuevo" class="btn btn-success"/>
+    <input type="submit" value="{{title}}" class="btn btn-success"/>
   </form>
 </div>

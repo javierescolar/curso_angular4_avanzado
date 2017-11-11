@@ -1,3 +1,26 @@
 <div class="col-lg-12" [@fadeIn]>
   <h1>{{title}}</h1>
+
+
+
+
+  <div class="col-sm-6 col-md-4" *ngFor="let animal of animals">
+    <div class="thumbnail">
+      <div class="animal-image-mask">
+          <img src="{{ url +'/get-image-animal/'+ animal.image}}" alt="image">
+      </div>
+      <div class="caption">
+        <h3>{{animal.name}}</h3>
+        <p>{{animal.year}}</p>
+        <p>
+          <a [routerLink]="['/animal',animal._id]" class="btn btn-success">
+            <span class="glyphicon glyphicon-eye-open"></span>
+            Ver
+          </a> 
+
+        </p>
+      </div>
+    </div>
+  </div>
+
 </div>

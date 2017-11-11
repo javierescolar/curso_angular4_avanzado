@@ -5,11 +5,13 @@ import { Animal} from '../../../models/animal';
 import { AnimalService} from '../../../services/animal.service';
 import { UserService} from '../../../services/user.service';
 import { UploadService} from '../../../services/upload.service';
+import { fadeLateral} from '../../animation';
 
 @Component({
   selector: 'admin-add',
   templateUrl: './add.component.html',
-  providers: [UserService,AnimalService,UploadService]
+  providers: [UserService,AnimalService,UploadService],
+  animations:[fadeLateral]
 })
 export class AddComponent implements OnInit{
   public title:string;
@@ -26,7 +28,7 @@ export class AddComponent implements OnInit{
     private _animaService: AnimalService,
     private _uploadService: UploadService
   ){
-    this.title = 'Dar de Alta';
+    this.title = 'Añadir';
     this.url = GLOBAL.url;
     this.animal = new Animal('','','',2017,'','');
     this.identity = _userService.getIdentity();

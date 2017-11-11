@@ -10,19 +10,26 @@ import {EditComponent} from './components/edit/edit.component';
 import {AddComponent} from './components/add/add.component';
 //guards
 import {AdminGuard} from '../guards/admin.guards';
+//pipes
+import {SearchPipe} from './pipes/search.pipe';
+
+//animations
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     MainComponent,
     ListComponent,
     EditComponent,
-    AddComponent
+    AddComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     FormsModule,
     HttpModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    BrowserAnimationsModule
   ],
   exports: [],
   providers: [AdminGuard]

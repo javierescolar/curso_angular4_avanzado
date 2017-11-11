@@ -64,4 +64,8 @@ export class UserService {
       .map(res => res.json());
   }
 
+  getKeepers(){
+    return this.http.get(this.url+'/keepers').map(res=>res.json());
+  }
+
 }
